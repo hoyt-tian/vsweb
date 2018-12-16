@@ -1,7 +1,8 @@
-const path = require('path');
-const html = require('html-webpack-plugin');
+const path = require('path')
+const html = require('html-webpack-plugin')
 const pkg = require('./package.json')
-const webpack = require('webpack');
+const webpack = require('webpack')
+const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin')
 
 const Setting = {
     common: 'common',
@@ -73,7 +74,8 @@ const config = {
     plugins: [
         new webpack.DefinePlugin({
             'process.env.NODE_ENV': JSON.stringify(Setting.NODE_ENV)
-        })
+        }),
+        new MonacoWebpackPlugin()
     ],
     resolve: {
         alias: { }

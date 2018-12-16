@@ -73,3 +73,13 @@ export const timeStringify = (timestamp, accuracy = 6) => {
  * @param {*} obj 
  */
 export const clone = (obj) => JSON.parse(JSON.stringify(obj))
+
+/**
+ * 根据路径获取文件名
+ * @param {*} path 
+ */
+export const getFileName = path => {
+  const reg = /\/(.+)$/
+  const r = path.match(reg)
+  return r[1]
+}

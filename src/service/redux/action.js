@@ -17,11 +17,19 @@ const ActionMap = {
    */
   leftPanelSize: 200,
 
+  /**
+   * 文件列表
+   */
   files: [
     { path: './mock', folder: true, children: [] },
     { path: './src', folder: true, children: [] },
-    { path: './.babelrc', folder: false},
-    { path: './package.json', folder: false}
+    { path: './.babelrc', folder: false, opened: false, content: 'babel rc' },
+    { path: './package.json', folder: false, opened: true, changed: true, content: 'package.json' }
+  ],
+
+  editFiles: [
+    { path: './.babelrc', folder: false, opened: false, content: 'babel rc', active: true },
+    { path: './package.json', folder: false, opened: true, changed: true, content: 'package.json' }
   ],
 }
 

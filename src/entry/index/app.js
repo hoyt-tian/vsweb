@@ -3,6 +3,7 @@ import '../../common'
 import './app.less'
 import Splitter from './splitter'
 import LeftPanel from './leftpanel'
+import EditorTabs from './editorTabs'
 
 export default class App extends React.PureComponent {
 
@@ -21,7 +22,9 @@ export default class App extends React.PureComponent {
       <section className="vscode-main">
         <LeftPanel />
         <Splitter />
-        <section>right</section>
+        <section className="right">
+          <EditorTabs />
+        </section>
       </section>
       <footer></footer>
     </section>

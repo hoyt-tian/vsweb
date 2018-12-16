@@ -1,0 +1,27 @@
+import CircleQueue from '../../src/util/CircleQueue'
+
+describe('循环队列测试', () => {
+  test('创建循环队列', () => {
+    const a = new CircleQueue(3)
+    a.enqueue(1)
+    a.enqueue(2)
+    expect(a.size()).toBe(2)
+    expect(a.dequeue()).toBe(1)
+    expect(a.dequeue()).toBe(2)
+    expect(a.size()).toBe(0)
+    a.enqueue(1)
+    a.enqueue(2)
+    a.enqueue(3)
+    a.enqueue(4)
+    expect(a.size()).toBe(3)
+    expect(a.dequeue()).toBe(2)
+    expect(a.dequeue()).toBe(3)
+    expect(a.dequeue()).toBe(4)
+    a.enqueue(5)
+    a.enqueue(6)
+    a.enqueue(7)
+    a.enqueue(8)
+    a.enqueue(9)
+    expect(a.pop()).toBe(9)
+  })
+})
